@@ -1,0 +1,199 @@
+<template>
+<div>
+  <ArtitemList v-if="$route.params.type === 'FusainNatureMorte'" v-model='tab' v-on:increment="incrementTotal"></ArtitemList>  
+</div>
+</template>
+
+<script>
+import ArtitemList from './ArtitemList'
+
+export default {
+    name: 'PageArtitemList',
+    components :
+    {
+	ArtitemList
+    },
+    data () {
+	return {
+	   total: 0,
+	    tab : [
+		{
+		    title:"Formes de base",
+		    description:"Du texte",
+		    gainAptitudesPoints : Number("1"),
+		    gainRewardsPoints : Number("1"),
+		    gainTalentPoint : Number("2"),
+		    talenPointNeededToUnlock : Number("0"),
+		    locked : false,
+		    iconLink : "blank",
+		    row : Number("1"),
+		    column : Number("2")
+		},
+		{
+		    title:"Ronds & Ellipses",
+		    description:"Du texte",
+		    gainAptitudesPoints : Number("1"),
+		    gainRewardsPoints : Number("1"),
+		    gainTalentPoint : Number("1"),
+		    talenPointNeededToUnlock : Number("0"),
+		    locked : false,
+		    iconLink : "blank",
+		    row : Number("1"),
+		    column : Number("3")
+		},{
+		    title:"Objet commun facile",
+		    description:"Du texte",
+		    gainAptitudesPoints : Number("2"),
+		    gainRewardsPoints : Number("2"),
+		    gainTalentPoint : Number("2"),
+		    talenPointNeededToUnlock : Number("10"),
+		    locked : false,
+		    iconLink : "blank",
+		    row : Number("2"),
+		    column : Number("2")
+		},
+		{
+		    title:"Assemblage de formes",
+		    description:"Du texte",
+		    gainAptitudesPoints : Number("2"),
+		    gainRewardsPoints : Number("2"),
+		    gainTalentPoint : Number("3"),
+		    talenPointNeededToUnlock : Number("16"),
+		    locked : false,
+		    iconLink : "blank",
+		    row : Number("2"),
+		    column : Number("3")
+		},
+		{
+		    title:"Formes organique",
+		    description:"Du texte",
+		    gainAptitudesPoints : Number("2"),
+		    gainRewardsPoints : Number("2"),
+		    gainTalentPoint : Number("3"),
+		    talenPointNeededToUnlock : Number("12"),
+		    locked : false,
+		    iconLink : "blank",
+		    row : Number("2"),
+		    column : Number("4")
+		},
+		{
+		    title:"Drapé simple",
+		    description:"Du texte",
+		    gainAptitudesPoints : Number("3"),
+		    gainRewardsPoints : Number("3"),
+		    gainTalentPoint : Number("4"),
+		    talenPointNeededToUnlock : Number("30"),
+		    locked : false,
+		    iconLink : "blank",
+		    row : Number("3"),
+		    column : Number("1")
+		},
+		{
+		    title:"Objet commun médium",
+		    description:"Du texte",
+		    gainAptitudesPoints : Number("3"),
+		    gainRewardsPoints : Number("3"),
+		    gainTalentPoint : Number("3"),
+		    talenPointNeededToUnlock : Number("30"),
+		    locked : false,
+		    iconLink : "blank",
+		    row : Number("3"),
+		    column : Number("2")
+		},{
+		    title:"Formes organiques sliced",
+		    description:"Du texte",
+		    gainAptitudesPoints : Number("3"),
+		    gainRewardsPoints : Number("3"),
+		    gainTalentPoint : Number("3"),
+		    talenPointNeededToUnlock : Number("36"),
+		    locked : false,
+		    iconLink : "blank",
+		    row : Number("3"),
+		    column : Number("4")
+		},
+		{
+		    title:"Drapé moyen",
+		    description:"Du texte",
+		    gainAptitudesPoints : Number("4"),
+		    gainRewardsPoints : Number("4"),
+		    gainTalentPoint : Number("6"),
+		    talenPointNeededToUnlock : Number("110"),
+		    locked : false,
+		    iconLink : "blank",
+		    row : Number("4"),
+		    column : Number("1")
+		},{
+		    title:"Objet commun difficile",
+		    description:"Du texte",
+		    gainAptitudesPoints : Number("4"),
+		    gainTalentPoint : Number("4"),
+		    talenPointNeededToUnlock : Number("95"),
+		    locked : false,
+		    iconLink : "blank",
+		    row : Number("4"),
+		    column : Number("2")
+		},{
+		    title:"Assemblage forme O+L",
+		    description:"Du texte",
+		    gainAptitudesPoints : Number("4"),
+		    gainRewardsPoints : Number("4"),
+		    gainTalentPoint : Number("4"),
+		    talenPointNeededToUnlock : Number("95"),
+		    locked : false,
+		    iconLink : "blank",
+		    row : Number("4"),
+		    column : Number("3")
+		},
+		{
+		    title:"Texture",
+		    description:"Du texte",
+		    gainAptitudesPoints : Number("4"),
+		    gainRewardsPoints : Number("4"),
+		    gainTalentPoint : Number("4"),
+		    talenPointNeededToUnlock : Number("90"),
+		    locked : false,
+		    iconLink : "blank",
+		    row : Number("4"),
+		    column : Number("4")
+		},
+		{
+		    title:"Drapé difficile",
+		    description:"Du texte",
+		    gainAptitudesPoints : Number("5"),
+		    gainRewardsPoints : Number("5"),
+		    gainTalentPoint : Number("6"),
+		    talenPointNeededToUnlock : Number("180"),
+		    locked : false,
+		    iconLink : "blank",
+		    row : Number("5"),
+		    column : Number("1")
+		},
+		{
+		    title:"Machine",
+		    description:"Du texte",
+		    gainAptitudesPoints : Number("5"),
+		    gainRewardsPoints : Number("5"),
+		    gainTalentPoint : Number("6"),
+		    talenPointNeededToUnlock : Number("200"),
+		    locked : false,
+		    iconLink : "blank",
+		    row : Number("5"),
+		    column : Number("3")
+		}]
+	}
+    },
+    methods: {
+	incrementTotal: function () {
+	    this.total += 1
+	}
+    }
+}
+
+</script>
+
+<style scoped>
+.coco
+{
+    position: absolute;
+}
+</style>

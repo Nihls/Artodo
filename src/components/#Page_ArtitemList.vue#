@@ -1,0 +1,115 @@
+<template>
+
+</template>
+
+<script>
+export default {
+    name: 'Page_ArtitemList',
+    props: {
+	value: {type: Array, default () { return [] }}
+    },
+    data () {
+	return {
+	    tabArtItem: this.value,
+	    talentPoints: 0
+	}
+    },
+    methods: {
+	updateInfos (event) {
+	    this.talentPoints += 15
+	}
+    }
+    /*
+    methods: {
+	updateList (array) {
+	    talentPoint = talentPoint + 1
+	    //this.$emit('input', this.tabArtItem);
+	}
+	
+    }*/
+}
+
+</script>
+
+<style scoped>
+.leo
+{
+    position : relative;
+    width : 100vw;
+    height : 50vh;
+    background : blue;
+}
+
+
+.row
+{
+    width:100vw !important;
+}
+.box
+{
+    position: absolute;
+    
+    margin: 0 auto;
+    left: 0; 
+    right: 0; 
+    top: 50px;
+    box-sizing: content-box;
+    
+}
+.talent
+{
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    
+    position: relative;
+    display: inline-block;
+    
+    display: block;
+    margin: 15px auto;
+    margin-bottom: 35px;
+    
+    background:black;
+    background-size: cover;
+    
+    border-radius: 5px;
+}
+.fullBackImg
+{
+    position:absolute;
+    height: 100%;
+    width: 100%;
+}
+.counter
+{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0;
+    bottom: 0;
+    border: 2px solid black;
+    border-radius: 5px 10px;
+    text-align: center;
+    color: black;
+    background: #EFEFEF;
+    opacity: 0.5;
+}
+
+
+.fond
+{
+    background-image: url(https://artfiles.alphacoders.com/111/111975.jpg);
+    background-size: cover;
+    filter: blur(2px);
+    position: absolute;
+    width:100vw;
+    height:100vh;
+}
+
+.locked
+{
+  opacity: 0.3;
+  //background: blue;
+}
+
+</style>
