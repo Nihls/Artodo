@@ -47,7 +47,7 @@ export default {
 		    gainRewardsPoints : Number("2"),
 		    gainTalentPoint : Number("2"),
 		    talenPointNeededToUnlock : Number("10"),
-		    locked : false,
+		    locked : true,
 		    iconLink : "blank",
 		    row : Number("2"),
 		    column : Number("2")
@@ -59,7 +59,7 @@ export default {
 		    gainRewardsPoints : Number("2"),
 		    gainTalentPoint : Number("3"),
 		    talenPointNeededToUnlock : Number("16"),
-		    locked : false,
+		    locked : true,
 		    iconLink : "blank",
 		    row : Number("2"),
 		    column : Number("3")
@@ -71,7 +71,7 @@ export default {
 		    gainRewardsPoints : Number("2"),
 		    gainTalentPoint : Number("3"),
 		    talenPointNeededToUnlock : Number("12"),
-		    locked : false,
+		    locked : true,
 		    iconLink : "blank",
 		    row : Number("2"),
 		    column : Number("4")
@@ -83,7 +83,7 @@ export default {
 		    gainRewardsPoints : Number("3"),
 		    gainTalentPoint : Number("4"),
 		    talenPointNeededToUnlock : Number("30"),
-		    locked : false,
+		    locked : true,
 		    iconLink : "blank",
 		    row : Number("3"),
 		    column : Number("1")
@@ -95,7 +95,7 @@ export default {
 		    gainRewardsPoints : Number("3"),
 		    gainTalentPoint : Number("3"),
 		    talenPointNeededToUnlock : Number("30"),
-		    locked : false,
+		    locked : true,
 		    iconLink : "blank",
 		    row : Number("3"),
 		    column : Number("2")
@@ -106,7 +106,7 @@ export default {
 		    gainRewardsPoints : Number("3"),
 		    gainTalentPoint : Number("3"),
 		    talenPointNeededToUnlock : Number("36"),
-		    locked : false,
+		    locked : true,
 		    iconLink : "blank",
 		    row : Number("3"),
 		    column : Number("4")
@@ -118,7 +118,7 @@ export default {
 		    gainRewardsPoints : Number("4"),
 		    gainTalentPoint : Number("6"),
 		    talenPointNeededToUnlock : Number("110"),
-		    locked : false,
+		    locked : true,
 		    iconLink : "blank",
 		    row : Number("4"),
 		    column : Number("1")
@@ -128,7 +128,7 @@ export default {
 		    gainAptitudesPoints : Number("4"),
 		    gainTalentPoint : Number("4"),
 		    talenPointNeededToUnlock : Number("95"),
-		    locked : false,
+		    locked : true,
 		    iconLink : "blank",
 		    row : Number("4"),
 		    column : Number("2")
@@ -139,7 +139,7 @@ export default {
 		    gainRewardsPoints : Number("4"),
 		    gainTalentPoint : Number("4"),
 		    talenPointNeededToUnlock : Number("95"),
-		    locked : false,
+		    locked : true,
 		    iconLink : "blank",
 		    row : Number("4"),
 		    column : Number("3")
@@ -151,7 +151,7 @@ export default {
 		    gainRewardsPoints : Number("4"),
 		    gainTalentPoint : Number("4"),
 		    talenPointNeededToUnlock : Number("90"),
-		    locked : false,
+		    locked : true,
 		    iconLink : "blank",
 		    row : Number("4"),
 		    column : Number("4")
@@ -163,7 +163,7 @@ export default {
 		    gainRewardsPoints : Number("5"),
 		    gainTalentPoint : Number("6"),
 		    talenPointNeededToUnlock : Number("180"),
-		    locked : false,
+		    locked : true,
 		    iconLink : "blank",
 		    row : Number("5"),
 		    column : Number("1")
@@ -175,7 +175,7 @@ export default {
 		    gainRewardsPoints : Number("5"),
 		    gainTalentPoint : Number("6"),
 		    talenPointNeededToUnlock : Number("200"),
-		    locked : false,
+		    locked : true,
 		    iconLink : "blank",
 		    row : Number("5"),
 		    column : Number("3")

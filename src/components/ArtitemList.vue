@@ -1,13 +1,14 @@
 <template>
 <div>
+  {{ talentPoints }}
   <div class="fond"></div>  
   <div v-for='i in getNbRows' class="row" >
     <span v-for='j in [1, 2, 3, 4]'>
-      <div v-for='(talent, index) in tabArtItem' v-if='isNotEmpty(index, i, j)' class="columns small-3">
-	<div class="talent" v-on:click="incrementCounter">>
+      <div v-for='(item, index) in tabArtItem' v-if='isNotEmpty(index, i, j)' class="columns small-3" :class="[{ locked : item.locked }]">
+	<div class="talent" v-on:click="incrementCounter(item)">>
 	  <img class="fullBackImg" src="../assets/natmo.png" alt="">
 	  <div class="counter">1</div>
-	  <h4>{{talent.title}}</h4>
+	  <h4>{{item.title}}</h4>
 	</div>
       </div>
       <div v-if='emptyColumn(j)'class="columns small-3">&nbsp;</div>
@@ -17,6 +18,10 @@
 </template>
 
 <script>
+import Achievement from './Achievement'
+
+var audioUnlock = new Audio(require('../assets/mp3/unlock.ogg'));
+
 export default {
     name: 'ArtitemList',
     props: {
@@ -26,7 +31,7 @@ export default {
 	return {
 	    tabArtItem: this.value,
 	    talentPoints: 0,
-	    arrayOfLength : [],
+	    
 	    elementPutted : false,
 	    counter : 0
 	}
@@ -52,10 +57,27 @@ export default {
 	    
 	    return empty
 	},
-	incrementCounter: function () {
-	    console.log("called")
-	    this.counter += 10
-	    this.$emit('increment')
+	incrementCounter: function (talent) {
+	    if(!talent.locked)
+	    {
+		this.counter += 1
+		this.$emit('increment')
+
+		this.talentPoints += talent.gainTalentPoint
+
+		var i
+		for (i in this.tabArtItem)
+		{
+		    if(this.tabArtItem[i].locked)
+		    {
+			if(this.talentPoints >= this.tabArtItem[i].talenPointNeededToUnlock)
+			{
+			    audioUnlock.play();
+			    this.tabArtItem[i].locked = false
+			}
+		    }
+		}
+	    }
 	}
     },
     computed: {
@@ -91,6 +113,11 @@ export default {
     width:100vw !important;
     height: 25vh !important;
 }
+.locked
+{
+    opacity: 0.5;
+}
+
 .talent
 {
     width: 80px;
@@ -139,7 +166,7 @@ export default {
 	font-size: 0.6em;
 	top:80px;
     }
-
+    
 }
 
 .fond
@@ -152,10 +179,5 @@ export default {
     height:100vh;
 }
 
-.locked
-{
-  opacity: 0.3;
-  //background: blue;
-}
 
 </style>
