@@ -1,17 +1,21 @@
 <template>
 <div>
-  <ArtitemList v-if="$route.params.type === 'FusainNatureMorte'" v-model='tab' v-on:increment="incrementTotal"></ArtitemList>  
+  <ArtitemList v-if="$route.params.type === 'FusainNatureMorte'" v-model='tab' v-on:increment="incrementTotal"></ArtitemList>
+  
+  <Menu></Menu>
 </div>
 </template>
 
 <script>
 import ArtitemList from './ArtitemList'
+import Menu from './Menu';
 
 export default {
     name: 'PageArtitemList',
     components :
     {
-	ArtitemList
+	ArtitemList,
+	Menu
     },
     data () {
 	return {
@@ -25,9 +29,10 @@ export default {
 		    gainTalentPoint : Number("2"),
 		    talenPointNeededToUnlock : Number("0"),
 		    locked : false,
-		    iconLink : "blank",
+		    iconLink : require('../assets/img/fusain/nature_morte/formes_geometrique.png'),
 		    row : Number("1"),
-		    column : Number("2")
+		    column : Number("2"),
+		    nbEffectue: Number("0")
 		},
 		{
 		    title:"Ronds & Ellipses",
@@ -37,9 +42,10 @@ export default {
 		    gainTalentPoint : Number("1"),
 		    talenPointNeededToUnlock : Number("0"),
 		    locked : false,
-		    iconLink : "blank",
+		    iconLink : require('../assets/img/fusain/nature_morte/circle.jpg'),
 		    row : Number("1"),
-		    column : Number("3")
+		    column : Number("3"),
+		    nbEffectue: Number("0")
 		},{
 		    title:"Objet commun facile",
 		    description:"Du texte",
@@ -48,9 +54,10 @@ export default {
 		    gainTalentPoint : Number("2"),
 		    talenPointNeededToUnlock : Number("10"),
 		    locked : true,
-		    iconLink : "blank",
+		    iconLink : require('../assets/img/fusain/nature_morte/nm_facile.png'),
 		    row : Number("2"),
-		    column : Number("2")
+		    column : Number("2"),
+		    nbEffectue: Number("0")
 		},
 		{
 		    title:"Assemblage de formes",
@@ -60,9 +67,10 @@ export default {
 		    gainTalentPoint : Number("3"),
 		    talenPointNeededToUnlock : Number("16"),
 		    locked : true,
-		    iconLink : "blank",
+		    iconLink : require('../assets/img/fusain/nature_morte/nm_facile.png'),
 		    row : Number("2"),
-		    column : Number("3")
+		    column : Number("3"),
+		    nbEffectue: Number("0")
 		},
 		{
 		    title:"Formes organique",
@@ -72,9 +80,10 @@ export default {
 		    gainTalentPoint : Number("3"),
 		    talenPointNeededToUnlock : Number("12"),
 		    locked : true,
-		    iconLink : "blank",
+		    iconLink : require('../assets/img/fusain/nature_morte/forme_organique_sliced.jpeg'),
 		    row : Number("2"),
-		    column : Number("4")
+		    column : Number("4"),
+		    nbEffectue: Number("0")
 		},
 		{
 		    title:"Drapé simple",
@@ -84,9 +93,10 @@ export default {
 		    gainTalentPoint : Number("4"),
 		    talenPointNeededToUnlock : Number("30"),
 		    locked : true,
-		    iconLink : "blank",
+		    iconLink : require('../assets/img/fusain/nature_morte/drape_facile.jpg'),
 		    row : Number("3"),
-		    column : Number("1")
+		    column : Number("1"),
+		    nbEffectue: Number("0")
 		},
 		{
 		    title:"Objet commun médium",
@@ -96,9 +106,10 @@ export default {
 		    gainTalentPoint : Number("3"),
 		    talenPointNeededToUnlock : Number("30"),
 		    locked : true,
-		    iconLink : "blank",
+		    iconLink : require('../assets/img/fusain/nature_morte/nm_moyenne.png'),
 		    row : Number("3"),
-		    column : Number("2")
+		    column : Number("2"),
+		    nbEffectue: Number("0")
 		},{
 		    title:"Formes organiques sliced",
 		    description:"Du texte",
@@ -107,9 +118,10 @@ export default {
 		    gainTalentPoint : Number("3"),
 		    talenPointNeededToUnlock : Number("36"),
 		    locked : true,
-		    iconLink : "blank",
+		    iconLink : require('../assets/img/fusain/nature_morte/forme_organique_sliced.jpeg'),
 		    row : Number("3"),
-		    column : Number("4")
+		    column : Number("4"),
+		    nbEffectue: Number("0")
 		},
 		{
 		    title:"Drapé moyen",
@@ -119,9 +131,10 @@ export default {
 		    gainTalentPoint : Number("6"),
 		    talenPointNeededToUnlock : Number("110"),
 		    locked : true,
-		    iconLink : "blank",
+		    iconLink : require('../assets/img/fusain/nature_morte/drape_moyen.jpg'),
 		    row : Number("4"),
-		    column : Number("1")
+		    column : Number("1"),
+		    nbEffectue: Number("0")
 		},{
 		    title:"Objet commun difficile",
 		    description:"Du texte",
@@ -129,9 +142,10 @@ export default {
 		    gainTalentPoint : Number("4"),
 		    talenPointNeededToUnlock : Number("95"),
 		    locked : true,
-		    iconLink : "blank",
+		    iconLink : require('../assets/img/fusain/nature_morte/nm_difficile.png'),
 		    row : Number("4"),
-		    column : Number("2")
+		    column : Number("2"),
+		    nbEffectue: Number("0")
 		},{
 		    title:"Assemblage forme O+L",
 		    description:"Du texte",
@@ -140,9 +154,10 @@ export default {
 		    gainTalentPoint : Number("4"),
 		    talenPointNeededToUnlock : Number("95"),
 		    locked : true,
-		    iconLink : "blank",
+		    iconLink : require('../assets/img/fusain/nature_morte/nm_difficile.png'),
 		    row : Number("4"),
-		    column : Number("3")
+		    column : Number("3"),
+		    nbEffectue: Number("0")
 		},
 		{
 		    title:"Texture",
@@ -152,9 +167,10 @@ export default {
 		    gainTalentPoint : Number("4"),
 		    talenPointNeededToUnlock : Number("90"),
 		    locked : true,
-		    iconLink : "blank",
+		    iconLink : require('../assets/img/fusain/nature_morte/texture.jpg'),
 		    row : Number("4"),
-		    column : Number("4")
+		    column : Number("4"),
+		    nbEffectue: Number("0")
 		},
 		{
 		    title:"Drapé difficile",
@@ -164,9 +180,10 @@ export default {
 		    gainTalentPoint : Number("6"),
 		    talenPointNeededToUnlock : Number("180"),
 		    locked : true,
-		    iconLink : "blank",
+		    iconLink : require('../assets/img/fusain/nature_morte/drape_difficile.jpg'),
 		    row : Number("5"),
-		    column : Number("1")
+		    column : Number("1"),
+		    nbEffectue: Number("0")
 		},
 		{
 		    title:"Machine",
@@ -176,10 +193,12 @@ export default {
 		    gainTalentPoint : Number("6"),
 		    talenPointNeededToUnlock : Number("200"),
 		    locked : true,
-		    iconLink : "blank",
+		    iconLink : require('../assets/img/fusain/nature_morte/machine.jpg'),
 		    row : Number("5"),
-		    column : Number("3")
-		}]
+		    column : Number("3"),
+		    nbEffectue: Number("0")
+		}
+	    ]
 	}
     },
     methods: {
