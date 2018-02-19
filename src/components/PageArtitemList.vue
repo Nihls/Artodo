@@ -1,6 +1,7 @@
 <template>
 <div>
-  <ArtitemList v-if="$route.params.type === 'FusainNatureMorte'" v-model='tab' v-on:increment="incrementTotal"></ArtitemList>
+ <!-- <ArtitemList v-if="$route.params.type === 'FusainNatureMorte'" v-model='tab' v-on:increment="incrementTotal"></ArtitemList>-->
+    <ArtitemList v-model='tab' v-on:increment="incrementTotal"></ArtitemList>
   
   <Menu></Menu>
 </div>
